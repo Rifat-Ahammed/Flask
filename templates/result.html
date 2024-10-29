@@ -1,0 +1,46 @@
+<html>
+<head>
+    <style>
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        table {
+            margin: 0 auto; /* Center the table */
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Final Results</h2>
+    
+    <table>
+        <!-- Loop through the result dictionary and display keys and values -->
+        {% for key, value in result.items() %}
+            <tr>
+                <th>{{ key | capitalize }}</th>
+                <td>{{ value }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <!-- You can add a message based on pass/fail -->
+    <!--<h3 style="text-align: center;">
+        {% if result['res'] == 'Passed' %}
+            Congratulations! You passed the exam.
+        {% else %}
+            Sorry, you failed the exam. Try again.
+        {% endif %}
+    </h3>-->
+</body>
+</html>
